@@ -10,7 +10,16 @@ sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
-	mavenLocal()
+	repositories {
+		maven {
+			url "http://127.0.0.1:8082/repository/maven-releases/"
+			credentials {
+				username = "$nexusUser"
+				password = "$nexusPassword"
+			}
+			name "nexus"
+		}
+	}
 }
 
 dependencies {
